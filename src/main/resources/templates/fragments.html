@@ -21,12 +21,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <th:block th:each="action: ${actions}">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/search}">Search</a>
+                    <a class="nav-link" th:href="@{/{action}(action=${action.key})}" th:text="${action.value}"></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/list}">List</a>
-                </li>
+                </th:block>
             </ul>
         </div>
     </div>
